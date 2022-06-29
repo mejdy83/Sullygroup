@@ -1,0 +1,25 @@
+<ion-header>
+  <ion-toolbar color="light">
+    <ion-title>SullyGroup</ion-title>
+    <ion-buttons slot="end">
+      <ion-button (click)="retour()">
+        <ion-icon slot="icon-only" name="log-out"></ion-icon>
+      </ion-button>
+    </ion-buttons>
+  </ion-toolbar>
+</ion-header>
+
+<ion-content [fullscreen]="true">
+
+
+  <div id="container">
+    <div style="display: flex; align-items: center;justify-content: center;">
+      <img class="img" src="assets/img/Sully_Group_Logo.png">
+    </div>
+    <ion-input placeholder="Entrez une destination" [(ngModel)]="search" (ngModelChange)="traitement(search)">
+    </ion-input>
+  </div>
+  <ion-content *ngIf="isOkay">On peut vous proposer l'itinéraire: <br>
+    <ion-labbel *ngFor="let item of answer" >{{item.itineraire}}<br>Passant par : <ion-card *ngFor="let city of item.villes" >{{city}}<br></ion-card></ion-labbel>
+  </ion-content>
+</ion-content>

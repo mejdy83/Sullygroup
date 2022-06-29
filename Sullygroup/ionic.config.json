@@ -1,0 +1,7 @@
+{
+  "name": "Sullygroup",
+  "integrations": {
+    "cordova": {}
+  },
+  "type": "angular"
+}
